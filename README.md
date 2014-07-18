@@ -3,6 +3,14 @@ dotfiles
 
 A home for my dotfiles
 
+## dircolors
+
+link it:
+
+```
+ln -s dircolors ~/.dircolors
+```
+
 ## Bash file
 
 link it:
