@@ -12,4 +12,4 @@ export CLICOLOR=1
 
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export PS1="\[${BWhite}\]\u\[$White\]@\[$Orange\]\h\[$White\]: [\[$Green\]\w\[$White\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" - \")\[$Yellow\]\$(parse_git_branch)\[$White\]] \$ \[$Color_Off\]"
+export PS1="\[$White\]\h\[$White\]: [\[$Green\]\w\[$White\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" - \")\[$Yellow\]\$(parse_git_branch)\[$White\]] \$ \[$Color_Off\]"
