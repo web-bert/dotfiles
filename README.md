@@ -11,18 +11,32 @@ link it:
 ln -s dircolors ~/.dircolors
 ```
 
-## Bash file
+## Bash files
 
-link it:
+Change to the folder that contains the dotfiles GIT repo
 
-```
-ln -s bash_defaults ~/.bash_defaults
-```
-
-Then add this to one of the bash files to include the bash_defalts:
+Link the directory:
 
 ```
-if [ -f ~/.bash_defaults ]; then
-    . ~/.bash_defaults
-fi
+ln -s dotfiles ~/dotfiles
+```
+
+cd to home folder:
+
+```
+cd ~/
+```
+
+Link the bash_profile for the platform to .bash_profile.
+
+OSX:
+
+```
+ln -s dotfiles/bash_profile_osx .bash_profile
+```
+
+LINUX:
+
+```
+ln -s dotfiles/bash_profile_linux .bash_profile
 ```

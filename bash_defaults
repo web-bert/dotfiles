@@ -1,10 +1,11 @@
-#Colour the prompt - may have to ensure force_color_prompt=yes in the main bash file
-if [ "$color_prompt" = yes ]; then
-	#Change the prompt to have the git directory and use nice colours for the other parts
-	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]\033[01;33m\]$(__git_ps1):\[\033[01;37m\]\w\[\033[00m\]\$ '
-fi
+export EDITOR=nano
 
-#Aliases
-alias ll='ls -lah'
-alias show_ports='netstat -anltp | grep "LISTEN"'
-alias show_node='ps -ef | grep "node"'
+export ANDROID='Mozilla/5.0 (Linux; U; Android 2.1-update1; en-gb; SonyEricssonX10i Build/2.0.A.0.504) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17'
+export IPHONE='Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_5 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8L1 Safari/6533.18.5'
+export IPOD='Mozilla/5.0 (iPod; U; CPU iPhone OS 3_1_3 like Mac OS X; de-de) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7E18 Safari/528.16'
+export IPAD='Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7W367a Safari/531.21.10'
+export IPHONE_WEBVIEW='Mozilla/5.0 (iPhone; CPU iPhone OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Mobile/9B206'
+
+export ANDROID_2_1='Mozilla/5.0 (Linux; U; Android 2.1-update1; en-gb; SonyEricssonX10i Build/2.0.A.0.504) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17'
+export ANDROID_2_2='Mozilla/5.0 (Linux; U; Android 2.2; en-gb; HTC Desire Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
+export ANDROID_2_3='Mozilla/5.0 (Linux; U; Android 2.3.3; de-de; HTC_Sensation Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'
