@@ -1,0 +1,1 @@
+alias show_ports='netstat -anltp | grep "LISTEN"'
