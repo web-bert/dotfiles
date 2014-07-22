@@ -29,6 +29,8 @@ cd ~/
 
 Link the bash_profile for the platform to .bash_profile.
 
+If you DON'T have a .bash_profile, just link it
+
 OSX:
 
 ```
@@ -39,4 +41,20 @@ LINUX:
 
 ```
 ln -s dotfiles/bash_profile_linux .bash_profile
+```
+
+
+Otherwise if DO already have a .bash_profile, then add this line to it:
+
+OSX:
+
+```
+if [ -f ~/dotfiles/bash_prompt_osx ]; then source ~/dotfiles/bash_prompt_osx ; fi
+```
+
+
+LINUX:
+
+```
+if [ -f ~/dotfiles/bash_prompt_linux ]; then source ~/dotfiles/bash_prompt_linux ; fi
 ```
