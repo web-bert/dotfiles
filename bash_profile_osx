@@ -8,3 +8,5 @@ if [ -f ~/dotfiles/bash_defaults_osx ]; then source ~/dotfiles/bash_defaults_osx
 
 if [ -f ~/dotfiles/bash_colours_osx ]; then source ~/dotfiles/bash_colours_osx ; fi
 if [ -f ~/dotfiles/bash_prompt_osx ]; then source ~/dotfiles/bash_prompt_osx ; fi
+
+if [ -f ~/dotfiles/git-completion.bash ]; then source ~/dotfiles/git-completion.bash ; fi
