@@ -1,1 +1,2 @@
 alias restart_apache='echo "" && sudo apachectl -k restart && echo ""'
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
