@@ -1,1 +1,2 @@
 alias show_ports='netstat -anltp | grep "LISTEN"'
+alias show_os_version='uname -a && cat /etc/*release'
