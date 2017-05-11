@@ -16,3 +16,15 @@ alias docker-show-dangling-images='docker images -a -f dangling=true'
 alias docker-delete-dangling-volumes='docker volume rm $(docker volume ls -qf dangling=true)'
 alias docker-show-dangling-volumes='docker volume ls -f dangling=true'
 alias docker-redis='docker run -d -p 6379:6379 redis'
+alias docker-delete-exited-containers='docker-delete-containers exited'
+alias docker-delete-created-containers='docker-delete-containers created'
+
+function docker-delete-containers {
+    if [ -z "$1" ]; then
+        echo "Please provide a filter"
+    else
+        if [ `docker ps --all -q -f status=$1` ]; then
+            docker rm $(docker ps --all -q -f status=$1)
+        fi
+    fi
+}
