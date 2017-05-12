@@ -22,7 +22,7 @@ function docker-delete-containers {
         echo "Please provide a filter"
     else
         if [[ `docker ps --all -q -f status=$1` ]]; then
-            docker rm $(docker ps --all -q -f status=`$1`)
+            docker rm $(docker ps --all -q -f status=$1)
         fi
     fi
 }
