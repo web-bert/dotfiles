@@ -18,23 +18,53 @@ alias docker-delete-exited-containers='docker-delete-containers exited'
 alias docker-delete-created-containers='docker-delete-containers created'
 
 function docker-delete-containers {
-    if [ -z "$1" ]; then
-        echo "Please provide a filter"
-    else
-        if [[ `docker ps --all -q -f status=$1` ]]; then
-            docker rm $(docker ps --all -q -f status=$1)
-        fi
-    fi
+	if [ -z "$1" ]; then
+		echo "Please provide a filter"
+	else
+		if [[ `docker ps --all -q -f status=$1` ]]; then
+			docker rm $(docker ps --all -q -f status=$1)
+		fi
+	fi
 }
 
 function docker-delete-dangling-volumes {
-    if [[ `docker volume ls -qf dangling=true` ]]; then
-	docker volume rm $(docker volume ls -qf dangling=true)
-    fi
+	if [[ `docker volume ls -qf dangling=true` ]]; then
+		docker volume rm $(docker volume ls -qf dangling=true)
+	fi
 }
 
 function docker-delete-dangling-images {
-    if [[ `docker images -q -a -f dangling=true` ]]; then
-        docker rmi -f $(docker images -q -a -f dangling=true)
-    fi
+	if [[ `docker images -q -a -f dangling=true` ]]; then
+		docker rmi -f $(docker images -q -a -f dangling=true)
+	fi
+}
+
+# Use when stopping from withing another bash function to stop errors about container not found
+function docker-stop {
+	if [ -z "$1" ]; then
+		echo "Please provide a container name"
+	else
+		if [[ `docker ps -q -f name=$1` ]]; then
+			if [[ `docker stop $1` ]]; then
+				echo "$1 stopped"
+			fi
+		fi
+	fi
+}
+
+# Use for removing an image from within another bash function to stop errors about container not found
+function docker-rm {
+	if [ -z "$1" ]; then
+		echo "Please provide a container name"
+	else
+		if [[ `docker ps -q -f name=$1` ]]; then
+			echo "Docker container is currently running, please stop it first"
+		else
+			if [[ `docker ps -a -q -f name=$1` ]]; then
+				if [[ `docker rm $1` ]]; then
+					echo "$1 container deleted"
+				fi
+			fi
+		fi
+	fi
 }
