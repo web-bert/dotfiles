@@ -21,20 +21,20 @@ function docker-delete-containers {
     if [ -z "$1" ]; then
         echo "Please provide a filter"
     else
-        if [ `docker ps --all -q -f status=$1` ]; then
-            docker rm $(docker ps --all -q -f status=$1)
+        if [[ `docker ps --all -q -f status=$1` ]]; then
+            docker rm $(docker ps --all -q -f status=`$1`)
         fi
     fi
 }
 
 function docker-delete-dangling-volumes {
-    if [ `docker volume ls -qf dangling=true` ]; then
+    if [[ `docker volume ls -qf dangling=true` ]]; then
 	docker volume rm $(docker volume ls -qf dangling=true)
     fi
 }
 
 function docker-delete-dangling-images {
-    if [ `docker images -q -a -f dangling=true` ]; then
+    if [[ `docker images -q -a -f dangling=true` ]]; then
         docker rmi -f $(docker images -q -a -f dangling=true)
     fi
 }
