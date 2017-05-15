@@ -39,7 +39,7 @@ function docker-delete-dangling-images {
 	fi
 }
 
-# Use when stopping from withing another bash function to stop errors about container not found
+# Use when stopping from within another bash function to stop errors about container not found
 function docker-stop {
 	if [ -z "$1" ]; then
 		echo "Please provide a container name"
@@ -66,5 +66,15 @@ function docker-rm {
 				fi
 			fi
 		fi
+	fi
+}
+
+# Use to enable skipping of docker pull with PULL=0 so you don't always need an internet connection
+function docker-pull {
+	if [[ -z "$PULL" ]]; then
+		echo "Pulling image from docker hub..."
+		docker pull $1
+	else
+		echo "Skip pulling of latest image"
 	fi
 }
