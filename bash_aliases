@@ -45,6 +45,7 @@ function docker-stop {
 		echo "Please provide a container name"
 	else
 		if [[ `docker ps -q -f name=$1` ]]; then
+			echo "Stopping container $1..."
 			if [[ `docker stop $1` ]]; then
 				echo "$1 stopped"
 			fi
