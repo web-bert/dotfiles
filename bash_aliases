@@ -44,7 +44,7 @@ function docker-stop {
 	if [ -z "$1" ]; then
 		echo "Please provide a container name"
 	else
-		if [[ `docker ps -q -f name=$1` ]]; then
+		if [[ `docker ps -q -f name=^/$1\$` ]]; then
 			echo "Stopping container $1..."
 			if [[ `docker stop $1` ]]; then
 				echo "$1 stopped"
@@ -58,10 +58,10 @@ function docker-rm {
 	if [ -z "$1" ]; then
 		echo "Please provide a container name"
 	else
-		if [[ `docker ps -q -f name=$1` ]]; then
+		if [[ `docker ps -q -f name=^/$1\$` ]]; then
 			echo "Docker container is currently running, please stop it first"
 		else
-			if [[ `docker ps -a -q -f name=$1` ]]; then
+			if [[ `docker ps -a -q -f name=^/$1\$` ]]; then
 				if [[ `docker rm $1` ]]; then
 					echo "$1 container deleted"
 				fi
