@@ -3,3 +3,4 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias tree_visible="find . -print | grep -v '/\.' | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias clear_dns_cache='sudo killall -HUP mDNSResponder'
 alias docker-network-alias='[[ `ifconfig -r lo0 | grep 10.200.10.1 | wc -l` -eq 0 ]] && sudo ifconfig lo0 alias 10.200.10.1/24'
+alias yaml2js="python3 -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)'"
