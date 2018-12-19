@@ -44,17 +44,17 @@ ln -s dotfiles/bash_profile_linux .bash_profile
 ```
 
 
-Otherwise if DO already have a .bash_profile, then add this line to it:
+Otherwise if you DO already have a .bash_profile, then add this line to it:
 
 OSX:
 
 ```
-if [ -f ~/dotfiles/bash_prompt_osx ]; then source ~/dotfiles/bash_prompt_osx ; fi
+if [ -f ~/dotfiles/bash_profile_osx ]; then source ~/dotfiles/bash_profile_osx ; fi
 ```
 
 
 LINUX:
 
 ```
-if [ -f ~/dotfiles/bash_prompt_linux ]; then source ~/dotfiles/bash_prompt_linux ; fi
+if [ -f ~/dotfiles/bash_profile_linux ]; then source ~/dotfiles/bash_profile_linux ; fi
 ```
