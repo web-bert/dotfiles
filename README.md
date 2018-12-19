@@ -1,57 +1,44 @@
-dotfiles
-========
+# Setup guides
 
-A home for my dotfiles
+## 1. Clone the repo
 
-## dircolors
+Clone the repo to a folder of your choice.
 
-link it:
+We'll assume `~/work/personal/dotfiles` for this guide.
 
-```
-ln -s dircolors ~/.dircolors
-```
+## 2. Link the main directory
 
-## Bash files
+`ln -s ~/work/personal/dotfiles ~/dotfiles`
 
-Change to the folder that contains the dotfiles GIT repo
+## 3. Link the colours
 
-Link the directory:
+`ln -s ~/dotfiles/dircolors ~/.dircolors`
 
-```
-ln -s dotfiles ~/dotfiles
-```
+## 4. Link the bash profile for the platform
 
-cd to home folder:
+**Important: this step depends on whether you have a bash profile already**
 
-```
-cd ~/
-```
-
-Link the bash_profile for the platform to .bash_profile.
-
-If you DON'T have a .bash_profile, just link it
+### 4a. If you don't have a bash profile
 
 OSX:
 
 ```
-ln -s dotfiles/bash_profile_osx .bash_profile
+ln -s ~/dotfiles/bash_profile_osx ~/.bash_profile
 ```
 
 LINUX:
 
 ```
-ln -s dotfiles/bash_profile_linux .bash_profile
+ln -s ~/dotfiles/bash_profile_linux ~/.bash_profile
 ```
 
-
-Otherwise if you DO already have a .bash_profile, then add this line to it:
+### 4b. If you already have a .bash_profile, then add this line to it:
 
 OSX:
 
 ```
 if [ -f ~/dotfiles/bash_profile_osx ]; then source ~/dotfiles/bash_profile_osx ; fi
 ```
-
 
 LINUX:
 
