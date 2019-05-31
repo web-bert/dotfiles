@@ -17,7 +17,21 @@ alias docker-redis='docker run -d -p 6379:6379 redis'
 alias docker-delete-exited-containers='docker-delete-containers exited'
 alias docker-delete-created-containers='docker-delete-containers created'
 
-function docker-delete-containers {
+#Functions - must use underscores for names as these are widely supported
+
+function docker_image_name {
+
+	local image=$1
+	local tag=$2
+
+	if [ -n "$tag" ]; then
+		tag=":$tag"
+	fi
+
+	echo "$image$tag"
+}
+
+function docker_delete_containers {
 	if [ -z "$1" ]; then
 		echo "Please provide a filter"
 	else
@@ -27,20 +41,20 @@ function docker-delete-containers {
 	fi
 }
 
-function docker-delete-dangling-volumes {
+function docker_delete_dangling_volumes {
 	if [[ `docker volume ls -qf dangling=true` ]]; then
 		docker volume rm $(docker volume ls -qf dangling=true)
 	fi
 }
 
-function docker-delete-dangling-images {
+function docker_delete_dangling_images {
 	if [[ `docker images -q -a -f dangling=true` ]]; then
 		docker rmi -f $(docker images -q -a -f dangling=true)
 	fi
 }
 
 # Use when stopping from within another bash function to stop errors about container not found
-function docker-stop {
+function docker_stop {
 	if [ -z "$1" ]; then
 		echo "Please provide a container name"
 	else
@@ -54,7 +68,7 @@ function docker-stop {
 }
 
 # Use for removing an image from within another bash function to stop errors about container not found
-function docker-rm {
+function docker_rm {
 	if [ -z "$1" ]; then
 		echo "Please provide a container name"
 	else
@@ -71,7 +85,7 @@ function docker-rm {
 }
 
 # Use to enable skipping of docker pull with PULL=0 so you don't always need an internet connection
-function docker-pull {
+function docker_pull {
 	if [[ -z "$PULL" ]]; then
 		echo "Pulling image from docker hub..."
 		docker pull $1
