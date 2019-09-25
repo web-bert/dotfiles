@@ -45,3 +45,7 @@ LINUX:
 ```
 if [ -f ~/dotfiles/bash_profile_linux ]; then source ~/dotfiles/bash_profile_linux ; fi
 ```
+
+## 5. Setup the global gitignore
+
+`git config --global core.excludesfile ~/dotfiles/gitignore_global`

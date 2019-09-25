@@ -1,0 +1,11 @@
+.bin
+
+# OS generated files #
+######################
+.Spotlight-V100
+.Trashes
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
