@@ -14,8 +14,8 @@ alias docker-delete-all-containers='docker rm $(docker ps -a -q)'
 alias docker-show-dangling-images='docker images -a -f dangling=true'
 alias docker-show-dangling-volumes='docker volume ls -f dangling=true'
 alias docker-redis='docker run -d -p 6379:6379 redis'
-alias docker-delete-exited-containers='docker-delete-containers exited'
-alias docker-delete-created-containers='docker-delete-containers created'
+alias docker-delete-exited-containers='docker_delete_containers exited'
+alias docker-delete-created-containers='docker_delete_containers created'
 
 #Functions - must use underscores for names as these are widely supported
 
