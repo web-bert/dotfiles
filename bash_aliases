@@ -4,7 +4,7 @@ alias cll='clear && ll'
 
 alias show_node='ps -ef | grep "node"'
 alias untar='tar -zxvf'
-alias serve='python -m SimpleHTTPServer 8080'
+alias serve='python -m http.server 8080'
 
 alias show-git-commits='git log `git describe --tags --abbrev=0`..HEAD --pretty=format:"  * %s"'
 
