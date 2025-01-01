@@ -1,0 +1,8 @@
+if [ -f ~/dotfiles/bash_aliases ]; then source ~/dotfiles/bash_aliases ; fi
+if [ -f ~/dotfiles/bash_aliases_osx ]; then source ~/dotfiles/bash_aliases_osx ; fi
+
+if [ -f ~/dotfiles/bash_defaults ]; then source ~/dotfiles/bash_defaults ; fi
+if [ -f ~/dotfiles/bash_defaults_osx ]; then source ~/dotfiles/bash_defaults_osx ; fi
+
+if [ -f ~/dotfiles/bash_colours_osx ]; then source ~/dotfiles/bash_colours_osx ; fi
+if [ -f ~/dotfiles/zsh_prompt_osx ]; then source ~/dotfiles/zsh_prompt_osx ; fi
